@@ -1,0 +1,22 @@
+<nav>
+    <ul class="pagination justify-content-center cursor-pointer">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="prevPage()">Previous</a>
+      </li>
+        @for (page of pages; track $index) {
+            <li
+                class="page-item"
+                [class.active]="page === currentPage"
+            >
+                <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+            </li>
+        }
+      <li
+        class="page-item"
+        [class.disabled]="currentPage === pages.length"
+      >
+        <a class="page-link" (click)="nextPage()">Next</a>
+      </li>
+    </ul>
+  </nav>
+  

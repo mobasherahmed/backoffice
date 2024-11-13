@@ -1,0 +1,20 @@
+{
+    "COMMON": {
+        "Email": "Email",
+        "Password": "Password",
+        "NitajAdminPanel":"Nitaj Admin Panel",
+        "NitajRoles":"Manage Users, Products And More"
+    },
+    "AUTH":{
+        "SignIn": "Sign in",
+        "SignUp": "Sign up",
+        "ForgotPassword": "Forgot password?",
+        "DontHaveAccount": "Don't have an account?",
+        "AlreadyHaveAccount": "Already have an account?",
+        "CreateAccount": "Create account",
+        "EnterAccountDetails" : "Enter your account details",
+        "RememberMe": "Remember me",
+        "RecoverPassword":"Recover password",
+        "EnterPassword":"Enter your password"
+    }
+}

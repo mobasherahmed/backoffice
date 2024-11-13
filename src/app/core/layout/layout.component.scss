@@ -1,0 +1,63 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+.app-header,.app-footer {
+  background-color: #f8f9fa;
+  color: #000;
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 60px;
+  margin-inline-start: 250px; // Offset to the side of the sidebar
+  transition: margin-inline-start 0.3s ease;
+
+  // Full-width footer on smaller screens
+  @media (max-width: 767px) {
+    margin-inline-start: 0;
+  }
+
+  &.sidebar-active{
+    margin-inline-start: 250px;
+  }
+}
+
+// Define layout for body with sidebar and main content
+.app-body {
+  display: flex;
+  flex: 1;  // Allows the body section to grow and take the remaining space between header and footer
+  overflow: hidden;  // Prevents overflow in the body
+  height: 100%;
+  direction: var(--direction, ltr); /* Set to RTL or LTR dynamically */
+}
+
+
+.app-main-content {
+  flex: 1; // Fills the remaining space beside the sidebar
+  padding: 1rem;
+  background-color: #ffff;
+  overflow-y: auto;
+  margin-inline-start: 250px; // Offset to the side of the sidebar
+  transition: margin-inline-start 0.3s ease;
+
+  @media (max-width: 767px) {
+    margin-inline-start: 0;
+  }
+
+  &.sidebar-active{
+    margin-inline-start: 250px;
+  }
+}
+
+/* Media query for mobile layout */
+@media (max-width: 768px) {
+  .app-body {
+    flex-direction: column; // Stack sidebar on top of main content on small screens
+  }
+}

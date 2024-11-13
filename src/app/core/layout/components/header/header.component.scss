@@ -1,0 +1,61 @@
+.header{
+    position: absolute;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+.notification-dot {
+    width: 10px;
+    height: 10px;
+    left: 75%;
+    top: 5px;
+}
+
+.user-profile {
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+}
+
+.language-button {
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 60px;
+    margin-inline-start: 35px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.user-dropdown .dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+}
+
+.user-dropdown .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+::ng-deep body[dir="rtl"] .header {
+    right: auto;
+    left: 0;
+}
+
+::ng-deep body[dir="ltr"] .header {
+    right: 0;
+    left: auto;
+}
+

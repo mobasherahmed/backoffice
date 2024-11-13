@@ -1,0 +1,116 @@
+.login-page {
+    height: 100vh;
+    display: flex;
+  
+    .login-form {
+      background-color: #fff;
+      padding: 2rem;
+      padding-inline-start: 3rem;
+  
+      .brand {
+        font-size: 1.5rem;
+        font-family: sans-serif;
+      }
+  
+      .sign-in-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+  
+      .subtitle {
+        color: #747A80;
+        margin-bottom: 1.5rem;
+      }
+  
+      .input-group {
+        direction: ltr;
+        .form-control {
+          border-right: 0;
+          padding: 16px;
+        }
+  
+        .input-group-text {
+          background: #fff;
+          border-left: 0;
+          color: #6c757d;
+        }
+      }
+  
+      .btn-primary {
+        border: none;
+        font-weight: bold;
+        padding: 0.75rem;
+        color: white;
+      }
+  
+      .recover-password {
+        color: #000000;
+        text-decoration: underline;
+        font-size: 0.875rem;
+      }
+      .form-check-label {
+        color: #000000;
+      }
+      .form-check-input{
+        --bs-form-check-bg : #dee2e6;
+      }
+    }
+  
+    .info-section {
+      background-color: #22C55E;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+  
+      .lang-switcher {
+        align-self: flex-end;
+        margin-bottom: 2rem;
+        background: transparent;
+      }
+  
+      .card-group-preview {
+        .info-cards {
+          .card {
+            background-color: #fff;
+            color: #000;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+  
+            .badge {
+              font-size: 0.75rem;
+            }
+  
+            .user-name, .user-contact, .date-request, .action-info {
+              font-size: 0.875rem;
+            }
+  
+            .btn-success {
+            //   background-color: #28a745;
+              font-size: 0.875rem;
+              border: none;
+            }
+          }
+        }
+      }
+  
+      .footer-text {
+        margin-top: 2rem;
+  
+        p {
+          font-weight: bold;
+        }
+  
+        h2 {
+          font-size: 1.75rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  

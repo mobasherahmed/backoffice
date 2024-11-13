@@ -1,0 +1,43 @@
+$primary: #22C55E;
+$secondary: #6c757d;
+$success: #22C55E;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$white: #fff;
+$black: #000;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$link: #007bff;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "white": $white,
+    "black": $black,
+    "gray": $gray,
+    "gray-dark": $gray-dark
+);
+
+@mixin themify($themes) {
+	@each $name, $values in $themes {
+		.#{$name}-theme {
+			$theme-map: $values !global;
+			@content;
+		}
+	}
+}
+
+@function themed($key) {
+	@return map-get($theme-map, $key);
+}
+
+@import 'bootstrap/scss/bootstrap';

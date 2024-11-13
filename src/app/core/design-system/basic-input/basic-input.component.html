@@ -1,0 +1,90 @@
+<ng-container [ngSwitch]="variant">
+	<section
+		class="BasicInputComponent d-flex flex-column gap-2"
+		[ngClass]="{
+			'flex-sm-row justify-content-sm-between':
+				variant === 'label-and-subLabel',
+		}"
+	>
+		<section *ngSwitchCase="'label-and-subLabel'" class="d-flex flex-column">
+			<label class="font-size-16 font-weight-600 text-capitalize color-main-dark-blue">
+				{{ label }}
+			</label>
+			<label class="font-size-12 font-weight-400  text-capitalize color-text-secondary">
+				{{ subLabel }}
+			</label>
+		</section>
+
+		<section *ngSwitchCase="'label-only'">
+			<label class="font-size-16 font-weight-600 color-main-dark-blue">
+				{{ label }}
+			</label>
+		</section>
+
+		<section class="d-flex flex-column gap-1"  [dir]="type == 'tel' ? 'ltr': null">
+			<section class="position-relative">
+				<p class="BasicInputComponent__prefix position-absolute" *ngIf="prefix">
+					{{ prefix }}
+				</p>
+				<input
+					[name]="name"
+					(input)="onInput($event)"
+					(blur)="onBlur()"
+					[id]="id"
+					[value]="value"
+					class="BasicInputComponent__input rounded-12 {{customClasses}} border-1px-text-light-gray ps-3 py-2a transition"
+					[ngClass]="{
+						'disable':disabled,
+						'BasicInputComponent__input--labelAndSubLabel':
+							variant === 'label-and-subLabel',
+						'border-1px-success': control?.touched && control?.valid,
+						'border-1px-error': control?.touched && control?.invalid,						
+						'ps-8': prefix && prefixSize=='xs',
+						'ps-10': prefix && prefixSize=='md',
+						'ps-12': prefix && prefixSize=='lg',
+						'ps-16': prefix && prefixSize=='xl',
+						'pe-6':
+							suffixComponent ||
+							(control?.touched && control?.valid) ||
+							(control?.touched && control?.invalid),
+					}"
+					[placeholder]="placeholder"
+					[type]="type"
+					[attr.minlength]="minLength"
+					[attr.maxlength]="maxLength"
+					[attr.step]="type === 'number' ? 'any' : undefined"
+				/>
+				<div
+					class="BasicInputComponent__suffix position-absolute d-flex align-items-center"
+				>
+					<backoffice-icon
+						*ngIf="control?.touched && control?.valid"
+						icon="fa-solid fa-circle-check"
+						customClasses="color-success"
+						[size]="18"
+						class="me-2"
+					/>
+					<backoffice-icon
+						*ngIf="control?.touched && control?.invalid"
+						[size]="18"
+						customClasses="fa-light color-error"
+						icon="fa-circle-xmark"
+						class="me-2"
+					/>
+					<ng-container #suffixComponentContainer></ng-container>
+				</div>
+			</section>
+
+			<backoffice-error-message
+				[errorMessage]="
+					control?.touched &&
+					control?.invalid &&
+					(customErrorMessage ||
+						control?.errors?.['customError'] ||
+						control?.errors?.['validationSchemaError'])
+				"
+				*ngIf="!hideErrorMessage"
+			></backoffice-error-message>
+		</section>
+	</section>
+</ng-container>

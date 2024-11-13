@@ -1,0 +1,12 @@
+@import '../../../../assets/scss/bootstrap/variables';
+
+.bg-transparent {
+  background-color: transparent !important;
+  color: $white !important;
+  border: 1px solid $white !important;
+}
+.bg-custom-lang {
+  background-color: #DEE1FF1F !important;
+  color: #718096CC !important;
+  border: 1px solid #718096CC !important;
+}

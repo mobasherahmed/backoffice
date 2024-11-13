@@ -1,0 +1,15 @@
+<nav class="sidebar d-flex flex-column">
+    <div class="brand">
+        <h1>Nitaj</h1>
+    </div>
+    <ul class="nav flex-column">
+        @for (item of navItems; track $index) {
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" [routerLink]="item.url" routerLinkActive="active">
+                    <i class="bi bi-{{ item.icon }} me-2"></i>
+                    <span>{{ item.name }}</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

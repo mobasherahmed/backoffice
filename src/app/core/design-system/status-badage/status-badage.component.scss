@@ -1,0 +1,26 @@
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .badge-pending {
+    background-color: #f0b429; /* Yellow for Pending */
+  }
+  
+  .badge-active {
+    background-color: #28a745; /* Green for Active */
+  }
+  
+  .badge-inactive {
+    background-color: #dc3545; /* Red for Inactive */
+  }
+  
+  .badge-default {
+    background-color: #6c757d; /* Grey for Unknown status */
+  }
+  

@@ -1,0 +1,26 @@
+<button
+	[type]="type"
+	[disabled]="disabled || isLoading"
+	class="btn d-flex gap-2 align-items-center text-white"
+	[ngClass]="[size , variant, customClasses , isLoading ? 'justify-content-center' : '']"
+	(click)="buttonClicked()"
+>
+	<ng-container *ngIf="!isLoading">
+		<backoffice-icon *ngIf="startIcon" [size]="iconSize" [icon]="startIcon" />
+		<span
+			class="line-height-normal"
+			[ngClass]="{
+				'me-auto': contentAlignment === 'start',
+				'mx-auto': contentAlignment === 'center',
+				'ms-auto': contentAlignment === 'end',
+			}"
+			>{{ text }}</span
+		>
+		<backoffice-icon
+			*ngIf="endIcon"
+			[size]="iconSize"
+			[icon]="endIcon"
+		/>
+	</ng-container>
+	<backoffice-loading *ngIf="isLoading" [isLoading]="isLoading" [buttonLoader]="true" name="spinner" width="30px" height="30px" />
+</button>

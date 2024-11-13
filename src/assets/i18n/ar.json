@@ -1,0 +1,20 @@
+{
+    "COMMON": {
+        "Email": "البريد الإلكتروني",
+        "Password": "كلمة المرور",
+        "NitajAdminPanel": "لوحة إدارة نيتاج",
+        "NitajRoles": "إدارة المستخدمين والمنتجات والمزيد"
+    },
+    "AUTH": {
+        "SignIn": "تسجيل الدخول",
+        "SignUp": "إنشاء حساب",
+        "ForgotPassword": "هل نسيت كلمة المرور؟",
+        "DontHaveAccount": "ليس لديك حساب؟",
+        "AlreadyHaveAccount": "هل لديك حساب بالفعل؟",
+        "CreateAccount": "إنشاء حساب",
+        "EnterAccountDetails": "أدخل تفاصيل حسابك",
+        "RememberMe": "تذكرني",
+        "RecoverPassword": "استعادة كلمة المرور",
+        "EnterPassword": "أدخل كلمة المرور"
+    }
+}

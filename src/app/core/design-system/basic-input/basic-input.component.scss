@@ -1,0 +1,55 @@
+@import '../../../../assets/scss/bootstrap/variables';
+@import '../../../../assets/scss/bootstrap/break-points';
+
+.BasicInputComponent {
+	&__input {
+		width: 100%;
+		height: 50px;
+		outline: none;
+		direction: inherit;
+    &:focus {
+      border: 1px solid $main-light-blue;
+    }
+		&[type='number']::-webkit-outer-spin-button,
+		&[type='number']::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		&[type='number'] {
+			-moz-appearance: textfield;
+		}
+		&::-webkit-input-placeholder {
+			color: $text-dark-gray;
+		}
+		&::-moz-placeholder {
+			color: $text-dark-gray;
+		}
+		&:-ms-input-placeholder {
+			color: $text-dark-gray;
+		}
+		&:-moz-placeholder {
+			color: $text-dark-gray;
+		}
+	}
+
+	&__suffix {
+		inset-inline-end: 16px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&__prefix {
+		inset-inline-start: 16px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, sm)) {
+	.BasicInputComponent {
+		&__input {
+			&--labelAndSubLabel {
+				width: 400px;
+			}
+		}
+	}
+}

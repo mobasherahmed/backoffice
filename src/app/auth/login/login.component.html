@@ -1,0 +1,66 @@
+<div class="container-fluid g-0 login-page">
+    <div class="row w-100 g-0">
+      <!-- Left Side - Login Form -->
+      <div class="col-md-6 d-flex flex-column justify-content-around login-form">
+        <h2 class="brand">Nitaj</h2>
+        <form class="w-75" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            <h1 class="sign-in-title">{{'AUTH.SignIn' | translate}}</h1>
+            <p class="subtitle">{{'AUTH.EnterAccountDetails' | translate}}</p>
+          <div class="mb-3">
+            <label for="email" class="form-label">{{'COMMON.Email' | translate}}</label>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="catherine.shaw@gmail.com"
+                formControlName="email"
+              />
+              <span class="input-group-text">
+                <i class="bi bi-envelope"></i>
+              </span>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="password" class="form-label">{{'COMMON.Password' | translate}}</label>
+            <div class="input-group">
+              <input
+               [type]="showPassword() ? 'text' : 'password'"
+                class="form-control"
+                id="password"
+                [placeholder]="'AUTH.EnterPassword' | translate"
+                formControlName="password"
+              />
+              <span class="input-group-text cursor-pointer" (click)="showPassword.set(!showPassword())">
+                <i class="bi bi-eye-slash"></i>
+              </span>
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe">{{'AUTH.RememberMe' | translate}}</label>
+            </div>
+            <a href="#" class="recover-password">{{'AUTH.RecoverPassword' | translate}}</a>
+          </div>
+          <backoffice-button class="w-100" [text]="'AUTH.SignIn' | translate" [size]="ButtonSizes.Large" type="submit" [variant]="ButtonVariant.Primary" customClasses="w-100"></backoffice-button>
+        </form>
+      </div>
+  
+      <!-- Right Side - Info Section -->
+      <div class="col-md-6 info-section">
+        <backoffice-lang-switcher class="lang-switcher" customClasses="bg-transparent"></backoffice-lang-switcher>
+        <div class="cards-holder">
+            <img src="assets/images/login-cards.png" alt="login-cards" width="100%" height="100%">
+        </div>
+  
+        <div class="footer-text">
+          <p>{{'COMMON.NitajAdminPanel' | translate}}</p>
+          <h2>{{'COMMON.NitajRoles' | translate}}</h2>
+        </div>
+      </div>
+    </div>
+</div>
+  

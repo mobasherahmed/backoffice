@@ -1,0 +1,17 @@
+<div class="app-layout">
+    <backoffice-header class="app-header" [class.sidebar-active]="sidebarActive()">
+      <i class="bi bi-layout-sidebar-inset d-md-none cursor-pointer"  (click)="toggleSidebar()"></i>
+    </backoffice-header>
+    
+    <div class="app-body">
+      <backoffice-sidebar class="app-sidebar" [class.active]="sidebarActive()"></backoffice-sidebar>
+
+      <main class="app-main-content" [class.sidebar-active]="sidebarActive()">
+        <router-outlet></router-outlet>
+      </main>
+    
+    </div>
+
+    <backoffice-footer class="app-footer" [class.sidebar-active]="sidebarActive()"></backoffice-footer>
+</div>
+  

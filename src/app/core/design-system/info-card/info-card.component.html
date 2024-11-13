@@ -1,0 +1,20 @@
+<section
+	class="d-flex flex-column gap-3 rounded-20 px-4 py-3 align-items-center"
+	[ngClass]="bgClass"
+>
+	<backoffice-icon
+		*ngIf="cardData.icon"
+		[icon]="cardData.icon"
+		customClasses="custom-class"
+		size="md"
+	></backoffice-icon>
+
+	<section>
+		<h5 class="color-text-main font-size-16 font-weight-600 text-center">
+			{{ cardData.title | translate }}
+		</h5>
+		<p class="font-size-16 text-center font-weight-400 color-text-secondary">
+			{{ cardData.description | translate }}
+		</p>
+	</section>
+</section>

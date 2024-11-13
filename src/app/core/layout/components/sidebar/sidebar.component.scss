@@ -1,0 +1,85 @@
+:host {
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+    padding: 16px;
+    padding-top: 0;
+  
+    @media (max-width: 768px) {
+      transform: translateX(-100%);
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      transform: translateX(0); // Always visible on larger screens
+    }
+
+    .brand{
+      color: #000000;
+      border-bottom: 1px solid #E2E8F0;
+      background-color: #f8f9fa;
+      position: sticky;
+      top: 0;
+      padding: 10px;
+      h1{
+      font-size: 25px;
+      }
+    }
+  
+    .nav{
+      margin-top: 5px;
+      padding-inline-start: 0;
+      .nav-link {
+        color: #718096;
+        padding: 8px;
+        font-size: 0.9rem;
+        margin-block: 2px;
+    
+        &:hover,&.active {
+          color: #ffff;
+          background-color: #000000;
+          border-radius: 8px;
+        }
+    
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+
+    html[dir="rtl"] &,
+    body[dir="rtl"] & {
+      right: 0;
+      left: auto;
+      
+      @media (max-width: 768px) {
+        transform: translateX(100%);
+        &.active {
+          transform: translateX(0);
+        }
+      }
+  
+      @media (min-width: 768px) {
+        transform: translateX(0); // Always visible on larger screens
+      }
+    }
+}

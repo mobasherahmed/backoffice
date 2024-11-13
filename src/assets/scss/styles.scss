@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import './bootstrap/variables';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './custom-utilities.scss';
+:root {
+ --direction: ltr;
+}
+  
+:root[dir="rtl"] {
+ --direction: rtl;
+}
+
+body{
+    font-family: sans-serif;
+}

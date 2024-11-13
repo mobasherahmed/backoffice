@@ -1,0 +1,7 @@
+<div *ngIf="isLoading" class="text-white d-flex align-items-center justify-content-center" [class.loading-overlay]="fullscreen" [class.loading-overlay--fullscreen]="fullscreen">
+    <div *ngIf="!buttonLoader" class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+    <ng-container *ngIf="buttonLoader">
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+    </ng-container>
+    <span *ngIf="loadingText" class="text-dark mx-2">{{ loadingText }}</span>
+</div>

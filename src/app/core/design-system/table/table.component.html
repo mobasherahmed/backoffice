@@ -1,0 +1,75 @@
+
+
+<div class="table-responsive">
+
+    <div class="table-header d-flex gap-2">
+        <h4>Test Table</h4>
+        <!-- Search Input -->
+        <input [(ngModel)]="searchText" (input)="searchData()" class="form-control" placeholder="Search..." />
+        <!-- Filter Button -->
+        <button (click)="toggleFilterPanel()" class="btn btn-primary">Filters</button>
+    </div>
+  
+    <table class="table custom-table">
+        <thead>
+          <tr>
+            @for (column of columns; track $index) {
+                <th [style.width]="column.width" (click)="column.sortable ? sortColumn(column) : null">
+                    {{ column.label }}
+                    <ng-container *ngIf="column.sortable">
+                        <span *ngIf="sortedColumn === column.key && sortDirection === 'asc'">&#9650;</span> <!-- Up arrow -->
+                        <span *ngIf="sortedColumn === column.key && sortDirection === 'desc'">&#9660;</span> <!-- Down arrow -->
+                      </ng-container>
+                </th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+            @for (item of paginatedData; track $index) {
+                <tr>
+                    @for (column of columns; track $index) {
+                        @switch (column.type) {
+                            @case ('text') {
+                                <td>{{ item[column.key] }}</td>
+                            }
+                            @case ('link') {
+                                <td>
+                                    <a [routerLink]="item[column?.link ?? '']">{{ item[column.key] }}</a>
+                                </td>
+                            }
+                            @case ('status') {
+                                <td>
+                                    <backoffice-status-badage [status]="item[column.key]"></backoffice-status-badage>
+                                </td>
+                            }
+                            @case ('image') {
+                                <td>
+                                    <img [src]="item[column.key]" alt="image" class="img-fluid" />
+                                </td>
+                            }
+                            @case ('actions') {
+                                <td>
+                                    <backoffice-icon
+                                        *ngFor="let action of actions"
+                                        [icon]="getIconClass(action.label)"
+                                        [size]="20"
+                                        (click)="action.handler(item)"
+                                        class="cursor-pointer mx-1"
+                                        [ngClass]="getIconClassColor(action.label)">
+                                    </backoffice-icon>
+                                </td>
+                            }
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+      </table>
+      
+      <backoffice-pagination  [totalItems]="data.length"
+      [itemsPerPage]="itemsPerPage"
+      [currentPage]="currentPage"
+      (pageChange)="onPageChange($event)">
+    </backoffice-pagination>
+
+</div>
